@@ -1,4 +1,4 @@
-#   🧑🏾‍🚀  Xincks API
+#   🧑🏾‍🚀  CORE-PHP
 
 [![GitHub release](https://img.shields.io/static/v1?label=WEB_APP&message=Photogram&color=informational)](https://www.w3schools.com/html/)
 
@@ -53,7 +53,7 @@
     * Session::delete($key)
     * Session::unset()
 
-<br>
+<!-- <br>
 
 > Note: Enable .htaccess file in linux.
 
@@ -83,7 +83,7 @@
     sudo a2enmod rewrite  
     ```
     ``` 
-    sudo service apache2 restart 
+    sudo service apache2 restart  -->
     ```
 
 
