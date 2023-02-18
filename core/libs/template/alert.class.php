@@ -23,10 +23,12 @@ class Alert
       </div>';
     }
 
-    public static function error()
+    public static function msg($msg)
     {
-        echo ' <div class="alert alert-danger" role="alert">
-        Deleted successfully
-      </div>';
+        echo " <div class='alert alert-danger' role='alert'>
+          $msg
+      </div>";
     }
+
+   
 }

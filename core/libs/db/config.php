@@ -1,5 +1,5 @@
 <?php
-$path = $_SERVER['DOCUMENT_ROOT']."/core-php/core/";
+$path = $_SERVER['DOCUMENT_ROOT']."/core/";
 define("GLOBAL_PATH", $path);
 
 class Database
