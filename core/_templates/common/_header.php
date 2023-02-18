@@ -12,7 +12,7 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sign-in/">
 
     <link href="https://<?=$domain?>/assets/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://<?=$domain?>/assets/css/sign_in.css" rel="stylesheet">
+    <link href="https://<?=$domain?>/assets/css/<?=Session::get("current_dir")?>.css" rel="stylesheet">
     <link href="https://<?=$domain?>/assets/css/main.css" rel="stylesheet">
 </head>
 
