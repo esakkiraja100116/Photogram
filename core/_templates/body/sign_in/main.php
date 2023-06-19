@@ -1,10 +1,10 @@
 
-<?=Load::body("sign_in","action")?>
+<?php echo Load::body("sign_in", "action")?>
 
 <main class="form-signin w-100 m-auto">
     <?php
     
-    if(Session::get("user_login") == "failed"){
+    if(Session::get("user_login") == "failed") {
         Alert::msg("Authentication failed");
         Session::destroy();
     }

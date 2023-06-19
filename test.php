@@ -7,18 +7,16 @@
 // // echo get_config("username");
 // echo "</pre>";
 
-include "core/libs/load.php";
+require "core/libs/load.php";
 
-$password = "user@123";
-$username = "nattu@gmail.com";
-$users = new Unique("users", "");
-$db_password = $users->getItem("password","email",$username);
-var_dump($db_password);
-if(password_verify($password,strval($db_password))){
-    echo "username and pass is right";
-}else{
-    echo "username and pass is wrong";
-}
+$insert_data = [
+    "email" => "admin@photogram.com",
+    "password" => password_hash("admin@123", PASSWORD_DEFAULT),
+];
+
+$database = new Unique("users", "-");
+$database->insert_data($insert_data);
+
 // echo $result;
 
 

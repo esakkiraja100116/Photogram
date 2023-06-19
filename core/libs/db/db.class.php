@@ -85,7 +85,7 @@ class Unique
      * Dynamic update
      * 1st key should be id for update that particular row
      *
-     * @param array_value $data
+     * @param  array_value $data
      * @return true_or_false
      */
     public function ipdate_data($data)
@@ -103,8 +103,8 @@ class Unique
     /**
      * Get total rows from table based on one_col 
      *
-     * @param column_name $col
-     * @param row_value $value
+     * @param  column_name $col
+     * @param  row_value   $value
      * @return data (if not it will be NULL)
      */
 
@@ -112,24 +112,24 @@ class Unique
     {        
         $sql = "SELECT * FROM `$this->table_name` WHERE `$col` = '$value' AND `deleted_at` IS NULL;";
         // echo $sql;
-        return unique::get_data(Database::getConnection(),$sql);
+        return unique::get_data(Database::getConnection(), $sql);
     }
 
      /**
-     * Get total rows from table based on two column
-     *
-     * @param coloumn_name_1 $col_1
-     * @param row_value_1 $value_1
-     * @param coloumn_name_2 $col_2
-     * @param row_value_2 $value_2
-     * @return data (if not it will be NULL)
-     */
+      * Get total rows from table based on two column
+      *
+      * @param  coloumn_name_1 $col_1
+      * @param  row_value_1    $value_1
+      * @param  coloumn_name_2 $col_2
+      * @param  row_value_2    $value_2
+      * @return data (if not it will be NULL)
+      */
 
     public function getTotalBased2($col_1,$value_1,$col_2,$value_2)
     {        
         $sql = "SELECT * FROM `$this->table_name` WHERE `$col_1` = '$value_1' AND `$col_2` = '$value_2' AND `deleted_at` IS NULL;";
         // echo $sql;
-        return unique::get_data(Database::getConnection(),$sql);
+        return unique::get_data(Database::getConnection(), $sql);
     }
 
     /**
@@ -141,46 +141,46 @@ class Unique
     public function getTotal()
     {        
         $sql = "SELECT * FROM `$this->table_name`  WHERE `deleted_at` IS NULL ;";
-        return unique::get_data(Database::getConnection(),$sql);
+        return unique::get_data(Database::getConnection(), $sql);
     }
 
     /**
      * Get ID from table based on col_name and value
      *
-     * @param col_name $col_name
-     * @param value $value
+     * @param  col_name $col_name
+     * @param  value    $value
      * @return data (if not it will be NULL)
      */
 
     public function getId($col_name,$value)
     {        
         $sql = "SELECT `id` FROM `$this->table_name` WHERE `$col_name` = '$value' AND `deleted_at` IS NULL;";
-        $data = unique::get_data(Database::getConnection(),$sql);
-        return $data[0]['id']??NULL;
+        $data = unique::get_data(Database::getConnection(), $sql);
+        return $data[0]['id']??null;
     }
 
 
     /**
      * Get particular value from table based on col_name and value
      *
-     * @param selected_col $select
-     * @param col_name $col_name
-     * @param value $value
+     * @param  selected_col $select
+     * @param  col_name     $col_name
+     * @param  value        $value
      * @return selected_value (if not it will be NULL)
      */
 
     public function getItem($select,$col_name,$value)
     {        
         $sql = "SELECT `$select` FROM `$this->table_name` WHERE `$col_name` = '$value' AND `deleted_at` IS NULL;";
-        $data = unique::get_data(Database::getConnection(),$sql);
-        return $data[0]["$select"]??NULL;
+        $data = unique::get_data(Database::getConnection(), $sql);
+        return $data[0]["$select"]??null;
     }
 
     /**
      * Delete row using particular value
      *
-     * @param col_name $coL
-     * @param value $val
+     * @param  col_name $coL
+     * @param  value    $val
      * @return True_or_False 
      */
 

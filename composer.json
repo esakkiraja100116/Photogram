@@ -1,0 +1,17 @@
+{
+    "name": "esakkiraja/photogram",
+    "autoload": {
+        "psr-4": {
+            "Esakkiraja\\Photogram\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "esakkiraja100116",
+            "email": "esakkiraja100116@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "squizlabs/php_codesniffer": "*"
+    }
+}

@@ -6,7 +6,7 @@ class Load
     /**
      * load the comman file 
      *
-     * @param template_name $name
+     * @param  template_name $name
      * @return include_file
      */
     public static function common($name)
@@ -20,8 +20,8 @@ class Load
     /**
      * load body    
      *
-     * @param directory_name $dir_name
-     * @param template_name $name
+     * @param  directory_name $dir_name
+     * @param  template_name  $name
      * @return include_file
      */
     public static function body($dir_name_, $name)
@@ -34,7 +34,7 @@ class Load
     /**
      * sidebar of the dashboard
      *
-     * @param sidebar_name $name
+     * @param  sidebar_name $name
      * @return include_sidebar
      */
     public static function sidebar($name)
