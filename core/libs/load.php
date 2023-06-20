@@ -1,13 +1,21 @@
 <?php
 
-$dir_name = $_SERVER['DOCUMENT_ROOT']."/core/libs";
-include_all($dir_name);
+if (php_sapi_name() == "cli") {
+    $dir_name = "/home/Esakkiraja/htdocs/photogram/core/libs";
+}else{
+    $dir_name = $_SERVER['DOCUMENT_ROOT']."/core/libs";
+}
 
-function include_all($dir_name)
+includeAll($dir_name);
+
+$webAPI = new WebAPI();
+$webAPI->initiateSession();
+
+function includeAll($dir_name)
 {
     foreach (scandir($dir_name) as $key => $dir_n) {
         // echo "$key and $dir_n <br>";
-        if($key !=0 && $key !=1 && $dir_n != "load.php") {
+        if ($key !=0 && $key !=1 && $dir_n != "load.php") {
             // echo "scanning.... ". $dir_n."<br>";
             foreach (glob("$dir_name/$dir_n/*.php") as $filename) {
                 include_once $filename;
@@ -17,10 +25,7 @@ function include_all($dir_name)
     }
 }
 
-// start the session
-session::start();
-
-function get_config($key, $default=null)
+function getConfig($key, $default=null)
 {
     $config_path = "/home/Esakkiraja/core-php.json";
     $myfile = fopen($config_path, "r") or die("Unable to open file!");

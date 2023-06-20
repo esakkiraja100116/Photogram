@@ -7,15 +7,7 @@
 // // echo get_config("username");
 // echo "</pre>";
 
-require "core/libs/load.php";
-
-$insert_data = [
-    "email" => "admin@photogram.com",
-    "password" => password_hash("admin@123", PASSWORD_DEFAULT),
-];
-
-$database = new Unique("users", "-");
-$database->insert_data($insert_data);
+print_r($_SERVER['PHP_SELF']);
 
 // echo $result;
 

@@ -12,7 +12,7 @@ class Load
     public static function common($name)
     {
         // echo "calling";
-        $domain =   $_SERVER['HTTP_HOST'];
+        $domain =   $_SERVER['HTTP_HOST']??'photogram1.selfmade.one';
         $file_name = basename($_SERVER['PHP_SELF'], ".php");
         include GLOBAL_PATH . "_templates/common/_$name.php";
     }
@@ -26,7 +26,7 @@ class Load
      */
     public static function body($dir_name_, $name)
     {
-        $domain =   $_SERVER['HTTP_HOST'];
+        $domain =   $_SERVER['HTTP_HOST']??'photogram1.selfmade.one';
         $file_name = basename($_SERVER['PHP_SELF'], ".php");
         include GLOBAL_PATH . "_templates/body/$dir_name_/$name.php";
     }
@@ -39,7 +39,7 @@ class Load
      */
     public static function sidebar($name)
     {
-        $domain =  $_SERVER['HTTP_HOST'];
+        $domain =   $_SERVER['HTTP_HOST']??'photogram1.selfmade.one';
         $file_name = basename($_SERVER['PHP_SELF'], ".php");
         include GLOBAL_PATH . "_templates/sidebar/$name.php";
     }
